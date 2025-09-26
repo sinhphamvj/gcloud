@@ -1,6 +1,5 @@
 
 
-
 1. Tạo Service Account : thay tên qwiklabs vào các lệnh dưới
 
 gcloud iam service-accounts create ml-sa-account \
@@ -28,12 +27,10 @@ gcloud projects add-iam-policy-binding qwiklabs-gcp-00-97242c5698cf \
   --role="roles/storage.admin"
 
 ## sau khi cấp quyề xong chờ 2 phút rồi check completed task 1
- export GOOGLE_APPLICATION_CREDENTIALS=/home/$(whoami)/ml-sa-key.json
 
 2.Tạo và tải về file credentials (JSON)
 gcloud iam service-accounts keys create ~/ml-sa-key.json \
   --iam-account=ml-sa-account@qwiklabs-gcp-00-97242c5698cf.iam.gserviceaccount.com
-
 
 ##Cấu hình biến môi trường cho Python script
   export GOOGLE_APPLICATION_CREDENTIALS=/home/$(whoami)/ml-sa-key.json
